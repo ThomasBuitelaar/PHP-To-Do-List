@@ -1,13 +1,14 @@
-DROP DATABASE IF EXISTS `tasks`;
-CREATE DATABASE IF NOT EXISTS `tasks`;
-USE `tasks`;
-
 CREATE TABLE `tasks` (
 	`list_id` INT(11) NOT NULL AUTO_INCREMENT,
 	`task_id` INT(11) NOT NULL AUTO_INCREMENT,
-	`person` VARCHAR(255) NOT NULL,
-	`day` TINYINT(4) NOT NULL,
-	`month` TINYINT(4) NOT NULL,
-	`year` SMALLINT(6) NULL DEFAULT NULL,
-	PRIMARY KEY (`id`)
+	`task_name` VARCHAR(255) NOT NULL,
+	`task_description` text NOT NULL,
+	PRIMARY KEY (`task_id`),
+	KEY `list_id` (`list_id`)
+);
+
+CREATE TABLE `lists` (
+	`list_id` INT(11) NOT NULL AUTO_INCREMENT,
+	`list_name` VARCHAR(255) NOT NULL,
+	PRIMARY KEY (`list_id`)
 );

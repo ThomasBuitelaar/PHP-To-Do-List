@@ -1,7 +1,7 @@
 <?php
 class Listings extends CI_Controller 
 {
-    public function view($list = 'home')
+    public function view($list = 'lists')
     {
     	if(!file_exists(APPPATH.'views/listings/' . $list . '.php'))
     	{
